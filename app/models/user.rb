@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
-  auto_strip_attributes :name, :email, squish: true
+  has_many :schedules
 
-  validates :name :email, presence: true
+  validates :name, :email, presence: true
   validates :password, presence: true, on: :create
   validates :email, uniqueness: true
+
+  auto_strip_attributes :name, :email, squish: true
+
   before_create { generate_token(:auth_token) }
 
   private
