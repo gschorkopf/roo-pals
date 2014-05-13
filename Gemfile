@@ -27,6 +27,9 @@ gem 'foundation-rails'
 gem 'pry-rails'
 gem 'pry'
 
+# Authorization
+gem 'bcrypt'
+
 # Validations
 gem 'auto_strip_attributes'
 
