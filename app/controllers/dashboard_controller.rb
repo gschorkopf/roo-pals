@@ -4,13 +4,21 @@ class DashboardController < ApplicationController
     doc = Nokogiri::HTML(open('http://lineup.bonnaroo.com/geoff'))
 
     @artists = []
-    doc.css('.ds-attending .ds-event-title a').each do |link|
-      artist = link.content
-      if artist.length > 75
-        @artists << artist[0..74] + "..."
-      else
-        @artists << artist
+    doc.css('.ds-attending').each do |div|
+      artist = []
+      div.css('.ds-event-title a').each do |link|
+        if link.content.length > 75
+          artist << link.content[0..74] + "..."
+        else
+          artist << link.content
+        end
       end
+
+      div.css('.ds-time-range').each do |span|
+        artist << span.content
+      end
+
+      @artists << artist
     end
   end
 end
