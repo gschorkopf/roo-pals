@@ -23,6 +23,10 @@ gem 'slim-rails'
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'foundation-rails'
 
+# Debugging
+gem 'pry-rails'
+gem 'pry'
+
 # Validations
 gem 'auto_strip_attributes'
 
