@@ -22,22 +22,25 @@
   .tab-content
     #thursday.tab-pane.active
       h2 Thursday
-      ul
+      ul.list-unstyled
         - @thursday_shows.each do |show|
           li = show.artist_name
       / .row
       /   .col-md-(number of columns)
     #friday.tab-pane
       h2 Friday
-      - @friday_shows.each do |show|
+      ul.list-unstyled
+        - @friday_shows.each do |show|
           li = show.artist_name
     #saturday.tab-pane
       h2 Saturday
-      - @saturday_shows.each do |show|
+      ul.list-unstyled
+        - @saturday_shows.each do |show|
           li = show.artist_name
     #sunday.tab-pane
       h2 Sunday
-      - @sunday_shows.each do |show|
+      ul.list-unstyled
+        - @sunday_shows.each do |show|
           li = show.artist_name
 
   hr
