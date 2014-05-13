@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513175419) do
+ActiveRecord::Schema.define(version: 20140513202143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20140513175419) do
     t.integer "schedule_id"
     t.integer "show_id"
   end
+
+  add_index "schedule_shows", ["schedule_id"], name: "index_schedule_shows_on_schedule_id", using: :btree
+  add_index "schedule_shows", ["show_id"], name: "index_schedule_shows_on_show_id", using: :btree
 
   create_table "schedules", force: true do |t|
     t.string "user_name"
@@ -33,5 +36,8 @@ ActiveRecord::Schema.define(version: 20140513175419) do
     t.string "day"
     t.string "location"
   end
+
+  add_index "shows", ["day"], name: "index_shows_on_day", using: :btree
+  add_index "shows", ["location"], name: "index_shows_on_location", using: :btree
 
 end
