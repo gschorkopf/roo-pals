@@ -5,7 +5,12 @@ class DashboardController < ApplicationController
 
     @artists = []
     doc.css('.ds-attending .ds-event-title a').each do |link|
-      @artists << link.content
+      artist = link.content
+      if artist.length > 75
+        @artists << artist[0..74] + "..."
+      else
+        @artists << artist
+      end
     end
   end
 end

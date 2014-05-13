@@ -12,8 +12,10 @@
 .container
   .row
     .col-md-12
-      h2 And here's where your schedules would go!
-      p IF YOU HAD ONE.
+      h2 Geoff's Thursday Lineup
+      ul
+        - @artists.each do |artist|
+          li = artist
   hr
     footer
       p
