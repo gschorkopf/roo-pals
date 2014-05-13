@@ -10,12 +10,36 @@
       = " Once that's done, go to your profile and edit the section that says 'Profile Link'. Then fill out the simple form below."
 
 .container
-  .row
-    .col-md-12
-      h2 Geoff's Thursday Lineup
+  ul.nav.nav-tabs
+    li.active
+      a data-toggle="tab" href="#thursday" Thursday
+    li
+      a data-toggle="tab" href="#friday" Friday
+    li
+      a data-toggle="tab" href="#saturday" Saturday
+    li
+      a data-toggle="tab" href="#sunday" Sunday
+  .tab-content
+    #thursday.tab-pane.active
+      h2 Thursday
       ul
-        - @artists.each do |artist|
-          li = artist
+        - @thursday_shows.each do |show|
+          li = show.artist_name
+      / .row
+      /   .col-md-(number of columns)
+    #friday.tab-pane
+      h2 Friday
+      - @friday_shows.each do |show|
+          li = show.artist_name
+    #saturday.tab-pane
+      h2 Saturday
+      - @saturday_shows.each do |show|
+          li = show.artist_name
+    #sunday.tab-pane
+      h2 Sunday
+      - @sunday_shows.each do |show|
+          li = show.artist_name
+
   hr
     footer
       p
