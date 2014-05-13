@@ -6,4 +6,21 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body
+    .navbar.navbar-inverse.navbar-fixed-top role="navigation"
+      .container
+        .navbar-header
+          button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          = link_to "Bonnaroo Friends!", root_path, class: "navbar-brand"
+        .navbar-collapse.collapse
+          form.navbar-form.navbar-right role="form"
+            .form-group
+              input.form-control placeholder="Profile Link" type="text"
+            .form-group
+              input.form-control placeholder="Full Name" type="text"
+            button.btn.btn-success type="submit" Submit
     = yield
+
