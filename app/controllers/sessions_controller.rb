@@ -15,6 +15,12 @@ class SessionsController < ApplicationController
       redirect_to root_url, notice: "Please make sure your password and email are correct"
     end
   end
+
+  def destroy
+    cookies.delete(:auth_token)
+    redirect_to root_url
+  end
+
   private
 
   def sign_in_params
