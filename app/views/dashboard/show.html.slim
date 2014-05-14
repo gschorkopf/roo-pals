@@ -34,23 +34,43 @@
       h2 Thursday
       ul.list-unstyled
         - @thursday_shows.each do |show|
-          li = show.artist_name
       / .row
       /   .col-md-(number of columns)
+          - if show.schedules.any?
+            li
+              = show.artist_name
+              ol
+                - show.schedules.each do |schedule|
+                  li = schedule.user.first_name
     #friday.tab-pane
       h2 Friday
       ul.list-unstyled
         - @friday_shows.each do |show|
-          li = show.artist_name
+          - if show.schedules.any?
+            li
+              = show.artist_name
+              ol
+                - show.schedules.each do |schedule|
+                  li = schedule.user.first_name
     #saturday.tab-pane
       h2 Saturday
       ul.list-unstyled
         - @saturday_shows.each do |show|
-          li = show.artist_name
+          - if show.schedules.any?
+            li
+              = show.artist_name
+              ol
+                - show.schedules.each do |schedule|
+                  li = schedule.user.first_name
     #sunday.tab-pane
       h2 Sunday
       ul.list-unstyled
         - @sunday_shows.each do |show|
-          li = show.artist_name
-
+          - if show.schedules.any?
+            li
+              = show.artist_name
+              ol
+                - show.schedules.each do |schedule|
+                  li = schedule.user.first_name
   hr
+
