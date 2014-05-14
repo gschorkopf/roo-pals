@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
+  has_secure_password
   has_many :schedules
 
-  validates :name, :email, presence: true
+  validates :first_name, :last_name, :email, presence: true
   validates :password, presence: true, on: :create
   validates :email, uniqueness: true
 
-  auto_strip_attributes :name, :email, squish: true
+  auto_strip_attributes :first_name, :last_name, :email, squish: true
 
   before_create { generate_token(:auth_token) }
 
