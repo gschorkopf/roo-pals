@@ -34,8 +34,6 @@
       h2 Thursday
       ul.list-unstyled
         - @thursday_shows.each do |show|
-      / .row
-      /   .col-md-(number of columns)
           - if show.schedules.any?
             li
               = show.artist_name
