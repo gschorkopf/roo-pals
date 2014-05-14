@@ -15,6 +15,10 @@
       p
         = 'Ex: the "geoff" part in "http://lineup.bonnaroo.com/geoff/"'
 
+      = simple_form_for @schedule do |f|
+        = f.input :url, label: false, placeholder: "URL Path"
+        = f.submit "Add Schedule", class: "btn btn-primary btn-block"
+
 .container
   ul.nav.nav-tabs
     li.active
