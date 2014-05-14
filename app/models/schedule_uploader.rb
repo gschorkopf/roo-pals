@@ -16,7 +16,7 @@ class ScheduleUploader
       doc.css('.ds-attending').each do |event|
         artist_name = event.css('.ds-event-title a').children.first.content
         range = event.css('.ds-time-range').children.first.content
-        starting_time = range.split(" - ").first
+        starting_at = range.split(" - ").first
         show = Show.find_by(artist_name: artist_name)
         if show
           schedule = Schedule.find_or_create_by(user: user, url: url)
