@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+# Create the backup on heroku
+heroku pgbackups:capture --expire --app bonnaroo
+
+# Download the backup
+curl -o /tmp/bonnaroo-production.dump `heroku pgbackups:url --app bonnaroo`
+
+# Restore the backup
+pg_restore --verbose --clean --no-acl --no-owner -h 127.0.0.1 -U `whoami` -d bonnaroo_development /tmp/bonnaroo-production.dump
+
+# Clean up
+rm -f /tmp/bonnaroo-production.dump
+
+set +e
