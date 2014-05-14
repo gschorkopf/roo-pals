@@ -1,0 +1,24 @@
+.jumbotron
+  .container
+    h1 Greetings, 'Roovians!
+    p
+      = "This is a website for checking out what shows our friends will be seeing at "
+      = link_to "Bonnaroo 2014.", "http://www.bonnaroo.com", target: "_blank"
+      = " Please sign up or log in below."
+    .row
+      .col-sm-6.col-xs-12
+        h2.hidden-xs Log In
+        = simple_form_for(:session, url: sessions_path) do |f|
+          = f.input :email
+          = f.input :password
+          = f.submit "Log In", class: "btn btn-primary btn-block"
+
+      .col-sm-6.col-xs-12
+        h2.hidden-xs Sign Up
+        = simple_form_for @user do |f|
+          = f.input :first_name
+          = f.input :last_name
+          = f.input :email
+          = f.input :password
+          = f.input :password_confirmation
+          = f.submit "Sign Up", class: "btn btn-primary btn-block"
