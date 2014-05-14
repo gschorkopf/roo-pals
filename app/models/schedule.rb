@@ -6,5 +6,13 @@ class Schedule < ActiveRecord::Base
   validates :url, presence: true
   validates :url, uniqueness: true
 
-  auto_strip_attributes :user_name, squish: true
+  auto_strip_attributes :url, squish: true
+
+  def attending?(show)
+    shows.include?(show)
+  end
+
+  def not_uploaded?
+    false
+  end
 end
