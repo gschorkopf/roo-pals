@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:auth_token) }
 
+  def schedule
+    schedules.first || NullSchedule.new
+    # TODO: This will be refactored once we do multiple festivals.
+  end
+
   private
 
   def generate_token(column)
