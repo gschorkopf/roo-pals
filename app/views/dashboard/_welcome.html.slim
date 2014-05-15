@@ -1,0 +1,11 @@
+.jumbotron#upper-content
+  .container
+    header.centerize
+      h1
+        => t('dashboard.welcome')
+        span#brand-color = t('misc.brand')
+      h5
+        = t('session.logged_in', user: current_user.first_name)
+        =< "|"
+        =< link_to t('session.log_out'), logout_path
+    = render 'instructions' if current_schedule.not_uploaded?

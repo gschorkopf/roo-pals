@@ -1,23 +1,4 @@
-.jumbotron#upper-content
-  .container
-    h1
-      = "Welcome to "
-      i= "Bonnaroo Friends"
-    h5
-      = "Logged in as #{current_user.first_name}."
-      =< link_to "Log Out", logout_path
-    - if current_schedule.not_uploaded?
-      p
-        = "First thing's first, #{current_user.first_name}. You'll need to create a "
-        = link_to "custom schedule.", "http://lineup.bonnaroo.com/login", target: "_blank"
-        = " Once that's done, go to your Bonnaroo profile and edit the section that says Profile Link. Then add your Profile Link here."
-
-      p
-        = 'Ex: the "geoff" part in "http://lineup.bonnaroo.com/geoff/"'
-
-      = simple_form_for @schedule do |f|
-        = f.input :url, label: false, placeholder: "URL Path"
-        = f.submit "Add Schedule", class: "btn btn-primary btn-block"
+= render "welcome"
 
 .container
   ul.nav.nav-tabs
