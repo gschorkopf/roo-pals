@@ -1,10 +1,7 @@
 class DashboardController < ApplicationController
   def show
     @schedule = Schedule.new
-
-    @thursday_shows = Show.where(day: "Thursday").includes(:schedules)
-    @friday_shows = Show.where(day: "Friday").includes(:schedules)
-    @saturday_shows = Show.where(day: "Saturday").includes(:schedules)
-    @sunday_shows = Show.where(day: "Sunday").includes(:schedules)
+    @shows = Show.all.includes(:schedules).by_starting_at
+    @days = @shows.pluck(:day).uniq.map(&:downcase)
   end
 end
