@@ -20,4 +20,30 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  days:
+    thursday: "Thursday"
+    friday: "Friday"
+    saturday: "Saturday"
+    sunday: "Sunday"
+  dashboard:
+    welcome: "Welcome to"
+    instruction_intro: "First thing's first, %{user}. You'll need to create a"
+    custom_schedule: "custom schedule."
+    profile_link: >
+      Once that's done, go to your Bonnaroo profile and edit the
+      section that says Profile Link. Then add your Profile Link here.
+    profile_example: 'Ex: the "geoff" part in "http://lineup.bonnaroo.com/geoff/"'
+  misc:
+    brand: "'Roo Pals"
+    bonnaroo: "Bonnaroo 2014."
+  session:
+    header: "Greetings, 'Roovians!"
+    log_out: "Log Out"
+    log_in: "Log In"
+    logged_in: "Logged in as %{user}"
+    sign_up: "Sign Up"
+    intro: "This is a website for checking out what shows our friends will be seeing at"
+    instructions: "Please sign up or log in below."
+  schedule:
+    add: "Add Schedule"
+    url: "URL Path"
