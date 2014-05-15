@@ -1,16 +1,26 @@
+@import "bootstrap";
+
+.panel { margin-bottom: 10px; }
+
 #upper-content {
   background-color: #EFF5FB;
+  padding-top: 45px;
 }
 
-#main-nav {
-  background-color: #0B0B61;
+#main-nav { background-color: #0B0B61; }
+#navbar-brand { color: white; }
+.glyphicon-heart { color: red; }
+#brand-color { color: #0B0B61; }
+.centerize { text-align: center; }
+
+.nav-pills {
+  padding-bottom: 15px;
+  text-align:center;
+  li {
+    float: none;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
 }
 
-#navbar-brand {
-  color: white;
-}
-
-.red {
-  color: red;
-}
-@import "bootstrap";
