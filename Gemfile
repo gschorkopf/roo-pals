@@ -30,6 +30,9 @@ gem 'pry'
 # Authorization
 gem 'bcrypt'
 
+# Pinging Heroku
+gem 'newrelic_rpm'
+
 # Validations
 gem 'auto_strip_attributes'
 
