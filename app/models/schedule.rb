@@ -1,5 +1,5 @@
 class Schedule < ActiveRecord::Base
-  has_many :schedule_shows
+  has_many :schedule_shows, dependent: :destroy
   has_many :shows, through: :schedule_shows
   belongs_to :user
 
