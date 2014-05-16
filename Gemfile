@@ -16,6 +16,7 @@ gem 'nokogiri'
 gem 'jquery-ui-rails'
 gem 'chosen-rails'
 gem 'bootstrap'
+gem 'draper', '~> 1.3'
 
 # View
 gem 'slim'
