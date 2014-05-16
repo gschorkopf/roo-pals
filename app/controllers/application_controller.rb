@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_schedule
-    @current_schedule ||= current_user.schedule
+    @current_schedule ||= current_user.schedule.decorate
   end
 
   def logged_in?

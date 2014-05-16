@@ -6,4 +6,8 @@ class NullSchedule
   def not_uploaded?
     true
   end
+
+  def decorate
+    self
+  end
 end
