@@ -17,6 +17,7 @@ gem 'jquery-ui-rails'
 gem 'chosen-rails'
 gem 'bootstrap'
 gem 'draper', '~> 1.3'
+gem 'underscore-rails'
 
 # View
 gem 'slim'
