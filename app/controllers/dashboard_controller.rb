@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
     @schedule = Schedule.new
     @show_groups = day_shows.values
     @days = day_shows.keys
+    @users = User.all
   end
 
   private

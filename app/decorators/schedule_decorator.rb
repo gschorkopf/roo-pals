@@ -8,4 +8,8 @@ class ScheduleDecorator < Draper::Decorator
   def user_name
     user.first_name
   end
+
+  def schedule_class
+    "schedule-#{id}"
+  end
 end

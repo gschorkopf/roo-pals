@@ -1,4 +1,9 @@
 .container
+  - @users.each do |user|
+    p
+      input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"
+        =< user.first_name
+
   ul.nav.nav-pills
     - @days.each_with_index do |day, i|
       = schedule_navigator(day, i)
@@ -20,4 +25,4 @@
                 span.badge.pull-right = show.schedules.count
                 ul.list-unstyled
                   - show.schedules.each do |schedule|
-                    li = schedule.user_name
+                    li class=schedule.schedule_class = schedule.user_name
