@@ -1,14 +1,14 @@
-# Bonnaroo Friends
+# Roo Pals
 
-#### About Bonnaroo Friends
+#### About Roo Pals
 
 This project is under construction. The MVP, however, is currently available at the production site below, and up-to-date with master.
 
-#### Visit Bonnaroo Friends's production site
+#### Visit Roo Pals's production site
 
 Production server is available at [bonnaroo.herokuapp.com](http://bonnaroo.herokuapp.com).
 
-#### Install Bonnaroo Friends locally
+#### Install Roo Pals locally
 
 To install and deploy:
 * Pull down repository
