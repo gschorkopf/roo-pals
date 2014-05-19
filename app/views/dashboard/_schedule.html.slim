@@ -1,8 +1,9 @@
 .container
   - @users.each do |user|
-    p
-      input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"
-        =< user.first_name
+    - unless user.schedule.not_uploaded?
+      p
+        input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"
+          =< user.first_name
 
   ul.nav.nav-pills
     - @days.each_with_index do |day, i|
