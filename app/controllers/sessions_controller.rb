@@ -10,15 +10,15 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(sign_in_params[:password])
       sign_in(@user)
-      redirect_to root_url, notice: "Welcome, #{current_user.first_name}!"
+      redirect_to root_path, notice: "Welcome, #{current_user.first_name}!"
     else
-      redirect_to root_url, notice: "Please make sure your password and email are correct"
+      redirect_to root_path, notice: "Please make sure your password and email are correct"
     end
   end
 
   def destroy
     cookies.delete(:auth_token)
-    redirect_to root_url
+    redirect_to root_path
   end
 
   private

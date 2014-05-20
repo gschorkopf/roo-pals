@@ -4,7 +4,7 @@ class SchedulesController < ApplicationController
       redirect_to root_path
     else
       @schedule = Schedule.new
-      @schedule.errors.add(:url, "The URL entered was not found. Are you sure it is correct?")
+      @schedule.errors.add(:profile_name, t('schedule.error'))
       render 'dashboard/show'
     end
   end
@@ -12,6 +12,6 @@ class SchedulesController < ApplicationController
   private
 
   def sign_in_params
-    params.require(:schedule).permit(:url).merge(user: current_user)
+    params.require(:schedule).permit(:profile_name).merge(user: current_user)
   end
 end

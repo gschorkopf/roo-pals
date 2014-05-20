@@ -46,4 +46,5 @@ en:
     instructions: "Please sign up or log in below."
   schedule:
     add: "Add Schedule"
-    url: "URL Path"
+    profile_name: "Profile Name"
+    error: "The URL entered was not found. Are you sure it is correct?"

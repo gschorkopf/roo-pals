@@ -1,5 +1,5 @@
 class ScheduleUploader
-  attr_reader :user, :url, :days
+  attr_reader :user, :profile_name, :days
 
   def self.perform(params)
     new(params).perform
@@ -7,7 +7,7 @@ class ScheduleUploader
 
   def initialize(params)
     @user = params[:user]
-    @url = params[:url]
+    @profile_name = params[:profile_name]
     @days = {
       "2014/06/12" => "Thursday",
       "2014/06/13" => "Friday",
@@ -18,16 +18,16 @@ class ScheduleUploader
 
   def perform
     days.each_pair do |date, day|
-      full_path = "http://lineup.bonnaroo.com/#{url}/schedule/#{date}"
+      full_path = "http://lineup.bonnaroo.com/#{profile_name}/schedule/#{date}"
       begin
         document = HTMLDocument.from(full_path)
       rescue
-        if schedule = Schedule.find_by(user: user, url: url)
+        if schedule = Schedule.find_by(user: user, profile_name: profile_name)
           schedule.destroy
         end
         return false
       end
-      BonnarooSchedule.upload(document: document, user: user, url: url)
+      BonnarooSchedule.upload(document: document, user: user, profile_name: profile_name)
     end
   end
 end

@@ -3,10 +3,10 @@ class Schedule < ActiveRecord::Base
   has_many :shows, through: :schedule_shows
   belongs_to :user
 
-  validates :url, :user, :user_id, presence: true
-  validates :url, uniqueness: true
+  validates :profile_name, :user, :user_id, presence: true
+  validates :profile_name, uniqueness: true
 
-  auto_strip_attributes :url, squish: true
+  auto_strip_attributes :profile_name, squish: true
 
   def attending?(show)
     shows.include?(show)
