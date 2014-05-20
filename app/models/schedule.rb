@@ -3,7 +3,7 @@ class Schedule < ActiveRecord::Base
   has_many :shows, through: :schedule_shows
   belongs_to :user
 
-  validates :url, presence: true
+  validates :url, :user, :user_id, presence: true
   validates :url, uniqueness: true
 
   auto_strip_attributes :url, squish: true
