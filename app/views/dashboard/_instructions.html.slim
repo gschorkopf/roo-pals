@@ -7,4 +7,4 @@ p = t('dashboard.profile_example')
 
 = simple_form_for @schedule do |f|
   = f.input :url, label: false, placeholder: t('schedule.url')
-  = f.submit t('schedule.add'), class: "btn btn-primary btn-block"
+  = f.submit t('schedule.add'), id: "schedule-add", class: "btn btn-primary btn-block"
