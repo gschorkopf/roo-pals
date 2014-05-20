@@ -19,9 +19,8 @@ class ScheduleUploader
   def perform
     days.each_pair do |date, day|
       full_path = "http://lineup.bonnaroo.com/#{url}/schedule/#{date}"
-
       begin
-        doc = Nokogiri::HTML(open(full_path))
+        document = HTMLDocument.from(full_path)
       rescue
         if schedule = Schedule.find_by(user: user, url: url)
           schedule.destroy
