@@ -11,7 +11,15 @@ class ScheduleUploader
 
     days.each_pair do |date, day|
       full_path = "http://lineup.bonnaroo.com/#{url}/schedule/#{date}"
-      doc = Nokogiri::HTML(open(full_path))
+
+      begin
+        doc = Nokogiri::HTML(open(full_path))
+      rescue
+        if schedule = Schedule.find_by(user: user, url: url)
+          schedule.destroy
+        end
+        return false
+      end
 
       doc.css('.ds-attending').each do |event|
         artist_name = event.css('.ds-event-title a').children.first.content
