@@ -32,7 +32,7 @@ en:
     profile_link: >
       Once that's done, go to your Bonnaroo profile and edit the
       section that says Profile Link. Then add your Profile Link here.
-    profile_example: 'Ex: the "geoff" part in "http://lineup.bonnaroo.com/geoff/"'
+    profile_example: 'Ex: just the "geoff" part in "http://lineup.bonnaroo.com/geoff/"'
   misc:
     brand: "'Roo Pals"
     bonnaroo: "Bonnaroo 2014."
@@ -47,4 +47,4 @@ en:
   schedule:
     add: "Add Schedule"
     profile_name: "Profile Name"
-    error: "The URL entered was not found. Are you sure it is correct?"
+    error: "The profile name entered was not found. Are you sure it is correct?"
