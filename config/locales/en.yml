@@ -48,4 +48,6 @@ en:
   schedule:
     add: "Add Schedule"
     profile_name: "Profile Name"
+    resync: "Resync Schedule"
     error: "The profile name entered was not found. Are you sure it is correct?"
+

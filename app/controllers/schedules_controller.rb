@@ -9,6 +9,12 @@ class SchedulesController < ApplicationController
     end
   end
 
+  def update
+    current_schedule.schedule_shows.destroy_all
+    ScheduleUploader.perform(user: current_user, profile_name: current_schedule.profile_name)
+    redirect_to root_path
+  end
+
   private
 
   def sign_in_params
