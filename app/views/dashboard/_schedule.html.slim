@@ -1,6 +1,6 @@
 .container
   - @users.each do |user|
-    - unless user.schedule.not_uploaded?
+    - unless user.schedule.not_uploaded? || user == current_user
       p
         input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"
           =< user.first_name
