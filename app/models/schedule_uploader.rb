@@ -16,7 +16,7 @@ class ScheduleUploader
         document = HTMLDocument.from(full_path)
       rescue
         destroy_schedule
-        false
+        return false
       end
       BonnarooSchedule.upload(document: document, user: user, profile_name: profile_name)
     end
