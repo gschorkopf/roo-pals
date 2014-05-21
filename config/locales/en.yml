@@ -36,6 +36,7 @@ en:
   misc:
     brand: "'Roo Pals"
     bonnaroo: "Bonnaroo 2014."
+    me: "Me"
   session:
     header: "Greetings, 'Roovians!"
     log_out: "Log Out"

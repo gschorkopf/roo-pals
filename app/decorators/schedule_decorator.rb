@@ -6,7 +6,7 @@ class ScheduleDecorator < Draper::Decorator
   end
 
   def user_name
-    user.first_name
+    h.current_user == user ? h.t('misc.me') : user.first_name
   end
 
   def schedule_class
