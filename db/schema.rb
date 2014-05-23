@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520212414) do
+ActiveRecord::Schema.define(version: 20140523182633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140520212414) do
     t.string   "location"
     t.datetime "starting_at"
     t.datetime "ending_at"
+    t.integer  "schedules_count", default: 0, null: false
   end
 
   add_index "shows", ["day"], name: "index_shows_on_day", using: :btree
