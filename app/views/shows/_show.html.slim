@@ -1,0 +1,13 @@
+.panel.panel-default class=current_schedule.attending_class(show)
+  .panel-heading
+    ul.list-unstyled
+      li
+        strong= show.artist_title
+        =< show_day ? show.time_frame_with_day : show.time_frame
+      li
+        = show.location
+  .panel-body
+    span.badge.pull-right = show.schedules.count
+    ul.list-unstyled
+      - show.schedules.each do |schedule|
+        li class=schedule.schedule_class = schedule.user_name

@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
     @show_groups = day_shows.values
     @days = day_shows.keys
     @users = User.all
+    @popularity = Show.by_popularity.limit(15).decorate
   end
 
   private
