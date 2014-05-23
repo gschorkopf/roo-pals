@@ -5,6 +5,7 @@ class Show < ActiveRecord::Base
   has_many :schedules, through: :schedule_shows
 
   scope :by_starting_at, -> { order(:starting_at, :ending_at) }
+  scope :by_popularity, -> { order(schedules_count: :desc) }
 
   auto_strip_attributes :artist_name, :location, :day, squish: true
 end
