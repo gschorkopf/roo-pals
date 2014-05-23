@@ -4,5 +4,5 @@ class ScheduleShow < ActiveRecord::Base
   validates_uniqueness_of :schedule, scope: :show
 
   belongs_to :schedule
-  belongs_to :show
+  belongs_to :show, counter_cache: :schedules_count
 end
