@@ -1,5 +1,7 @@
 # Roo Pals
 
+[![Code Climate](https://codeclimate.com/github/gschorkopf/roo-pals.png)](https://codeclimate.com/github/gschorkopf/roo-pals)
+
 #### About Roo Pals
 
 This project is under construction. The MVP, however, is currently available at the production site below, and up-to-date with master.
