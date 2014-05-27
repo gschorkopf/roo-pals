@@ -18,6 +18,7 @@ gem 'chosen-rails'
 gem 'bootstrap'
 gem 'draper', '~> 1.3'
 gem 'underscore-rails'
+gem 'github_api'
 
 # View
 gem 'slim'
