@@ -16,6 +16,7 @@ schedule = ->
 
   $add.on 'click', ->
     $(this).addClass("disabled")
+    $(this).text("Please Wait...")
     $(this).val("Please Wait...")
 
 $(document).ready schedule
