@@ -8,8 +8,8 @@
 
   = simple_form_for @schedule do |f|
     = f.input :profile_name, label: false, placeholder: t('schedule.profile_name')
-    = f.submit t('schedule.add'), id: "schedule-add", class: "btn btn-primary btn-block"
+    = f.submit t('schedule.add'), id: "schedule-add", class: "btn btn-primary btn-block add-loading"
 
 - else
   = simple_form_for current_schedule, method: :put do |f|
-    = f.submit t('schedule.resync'), id: "schedule-add", class: "btn btn-primary btn-block"
+    = f.submit t('schedule.resync'), id: "schedule-add", class: "btn btn-primary btn-block add-loading"

@@ -12,11 +12,11 @@ schedule = ->
       else
         $list.parents('.panel').removeClass('hidden')
 
-  $add = $('#schedule-add')
+  $add = $('.add-loading')
 
   $add.on 'click', ->
-    $add.addClass("disabled")
-    $add.val("Please Wait...")
+    $(this).addClass("disabled")
+    $(this).val("Please Wait...")
 
 $(document).ready schedule
 $(document).on "page:load", schedule
