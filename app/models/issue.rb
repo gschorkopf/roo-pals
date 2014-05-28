@@ -13,7 +13,8 @@ class Issue
     issue_factory.new(
       basic_auth: basic_auth,
       repo: 'roo-pals',
-      user: 'gschorkopf',
+      user: 'gschorkopf'
+    ).new(
       body: body,
       labels: label
     )

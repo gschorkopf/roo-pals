@@ -7,7 +7,7 @@
           = t('issue.title')
       .modal-body
         = simple_form_for(:issue, url: issues_path) do |f|
+          = f.input :label, collection: Issue.label_options
           = f.input :title
           = f.input :details, as: :text
-          = f.input :label, collection: Issue.label_options
           = f.submit t('issue.submit'), class: "btn btn-primary btn-block"
