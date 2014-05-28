@@ -15,6 +15,7 @@ class Issue
       repo: 'roo-pals',
       user: 'gschorkopf'
     ).create(
+      title: title,
       body: body,
       labels: label
     )
