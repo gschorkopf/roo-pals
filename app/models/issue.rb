@@ -14,7 +14,7 @@ class Issue
       basic_auth: basic_auth,
       repo: 'roo-pals',
       user: 'gschorkopf'
-    ).new(
+    ).create(
       body: body,
       labels: label
     )
