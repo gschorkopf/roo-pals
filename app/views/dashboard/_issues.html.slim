@@ -3,7 +3,7 @@
     .modal-content
       .modal-header
         = button_tag "X", data: { dismiss: 'modal' }, class: 'close'
-        h4.modal-title
+        h4.modal-title.centerize
           = t('issue.title')
       .modal-body
         = simple_form_for(:issue, url: issues_path) do |f|
