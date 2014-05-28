@@ -1,7 +1,7 @@
 nav.navbar.navbar-inverse.navbar-fixed-top#main-nav role="navigation"
   .container-fluid
     .navbar-header
-      = button_tag "#", class: 'navbar-toggle', data: { target: "#navbarToggle", toggle: 'collapse' } do
+      = button_tag "", class: 'navbar-toggle', data: { target: "#navbarToggle", toggle: 'collapse' } do
         span.icon-bar
         span.icon-bar
         span.icon-bar
@@ -13,6 +13,6 @@ nav.navbar.navbar-inverse.navbar-fixed-top#main-nav role="navigation"
             li
               = link_to t('schedule.resync'), schedule_path(current_schedule), method: :put, id: "schedule-add", class: "add-loading navbar-links"
           li
-            = link_to t('issue.link'), "#", data: { toggle: "modal", target: "#issueForm" }, class: 'navbar-links'
+            = link_to t('issue.link'), "", data: { toggle: "modal", target: "#issueForm" }, class: 'navbar-links'
           li
             = link_to t('session.log_out'), logout_path, class: 'navbar-links'
