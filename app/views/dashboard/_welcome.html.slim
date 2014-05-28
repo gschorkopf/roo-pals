@@ -5,6 +5,10 @@
         => t('dashboard.welcome')
         span#brand-color = t('misc.brand')
       h5
+        => t('issue.instructions')
+        = link_to t('issue.link'), "#", data: { toggle: "modal", target: "#issueForm" }
+        = render 'dashboard/issues'
+      h5
         = t('session.logged_in', user: current_user.first_name)
         =< "|"
         =< link_to t('session.log_out'), logout_path
