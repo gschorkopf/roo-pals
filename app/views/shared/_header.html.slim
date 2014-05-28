@@ -1,4 +1,18 @@
-.navbar.navbar-inverse.navbar-fixed-top#main-nav role="navigation"
-  .container
+nav.navbar.navbar-inverse.navbar-fixed-top#main-nav role="navigation"
+  .container-fluid
     .navbar-header
+      = button_tag "#", class: 'navbar-toggle', data: { target: "#navbarToggle", toggle: 'collapse' } do
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
       = link_to t('misc.brand'), root_path, class: "navbar-brand", id: "navbar-brand"
+    - if logged_in?
+      #navbarToggle.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          - unless current_schedule.not_uploaded?
+            li
+              = link_to t('schedule.resync'), schedule_path(current_schedule), method: :put, id: "schedule-add", class: "add-loading"
+          li
+            = link_to t('issue.link'), "#", data: { toggle: "modal", target: "#issueForm" }
+          li
+            = link_to t('session.log_out'), logout_path
