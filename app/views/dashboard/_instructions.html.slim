@@ -1,15 +1,10 @@
-- if current_schedule.not_uploaded?
-  p
-    => t('dashboard.instruction_intro', user: current_user.first_name)
-    => link_to t('dashboard.custom_schedule'), "http://lineup.bonnaroo.com/login", target: "_blank"
-    = t('dashboard.profile_link')
+p
+  => t('dashboard.instruction_intro', user: current_user.first_name)
+  => link_to t('dashboard.custom_schedule'), "http://lineup.bonnaroo.com/login", target: "_blank"
+  = t('dashboard.profile_link')
 
-  p = t('dashboard.profile_example')
+p = t('dashboard.profile_example')
 
-  = simple_form_for @schedule do |f|
-    = f.input :profile_name, label: false, placeholder: t('schedule.profile_name')
-    = f.submit t('schedule.add'), id: "schedule-add", class: "btn btn-primary btn-block add-loading"
-
-- else
-  = simple_form_for current_schedule, method: :put do |f|
-    = f.submit t('schedule.resync'), id: "schedule-add", class: "btn btn-primary btn-block add-loading"
+= simple_form_for @schedule do |f|
+  = f.input :profile_name, label: false, placeholder: t('schedule.profile_name')
+  = f.submit t('schedule.add'), id: "schedule-add", class: "btn btn-primary btn-block add-loading"
