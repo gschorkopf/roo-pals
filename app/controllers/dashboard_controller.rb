@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
     @schedule = Schedule.new
     @show_groups = day_shows.values
     @days = day_shows.keys
-    @users = User.all
+    @users = User.by_name
     @popularity = Show.by_popularity.limit(15).decorate
   end
 

@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, on: :create
   validates :email, uniqueness: true
 
+  scope :by_name, -> { order(:first_name) }
+
   auto_strip_attributes :first_name, :last_name, :email, squish: true
 
   before_create { generate_token(:auth_token) }
