@@ -19,5 +19,11 @@ schedule = ->
     $(this).text("Please Wait...")
     $(this).val("Please Wait...")
 
+  $body = $('#app-body')
+
+  $body.on 'click', ->
+    if $('#navbarToggle.in').length > 0
+      $('button.navbar-toggle').click()
+
 $(document).ready schedule
 $(document).on "page:load", schedule
