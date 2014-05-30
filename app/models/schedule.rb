@@ -15,4 +15,9 @@ class Schedule < ActiveRecord::Base
   def not_uploaded?
     false
   end
+
+  def compatibility(schedule)
+    same_shows = shows.select { |show| schedule.attending?(show) }
+    same_shows.count.to_f / shows.count.to_f
+  end
 end
