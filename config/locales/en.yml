@@ -33,6 +33,9 @@ en:
       Once that's done, go to your Bonnaroo profile and edit the
       section that says Profile Link. Then add your Profile Link here.
     profile_example: 'Ex: just the "geoff" part in "http://lineup.bonnaroo.com/geoff/"'
+    by_time: "By Time"
+    by_popularity: "By Popularity"
+    filter_users: "Filter User"
   issue:
     instructions: "Got a bug? Feature request?"
     title: "New Feedback"

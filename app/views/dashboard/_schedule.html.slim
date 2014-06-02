@@ -4,11 +4,11 @@
 .container
   ul.nav.nav-tabs.nav-justified
     li.active
-      = link_to "By Time", "#by-time", data: { toggle: 'tab' }
+      = link_to t('dashboard.by_time'), "#by-time", data: { toggle: 'tab' }
     li
-      = link_to "By Popularity", "#by-popularity", data: { toggle: 'tab' }
+      = link_to t('dashboard.by_poularity'), "#by-popularity", data: { toggle: 'tab' }
     li
-      = link_to "Filter Users", "#filter-users", data: { toggle: 'tab' }
+      = link_to t('dashboard.filter_user'), "#filter-users", data: { toggle: 'tab' }
   br
   .tab-content
     .tab-pane#by-time.active
