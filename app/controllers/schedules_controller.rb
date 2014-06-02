@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
   def create
-    if ScheduleUploader.perform(sign_in_params)
+    if ScheduleUploader.perform(schedule_params)
       redirect_to root_path
     else
       @schedule = Schedule.new
@@ -17,7 +17,7 @@ class SchedulesController < ApplicationController
 
   private
 
-  def sign_in_params
+  def schedule_params
     params.require(:schedule).permit(:profile_name).merge(user: current_user)
   end
 end
