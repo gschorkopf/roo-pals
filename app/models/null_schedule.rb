@@ -1,4 +1,8 @@
 class NullSchedule
+  def id
+    0
+  end
+
   def attending?(show)
     false
   end
