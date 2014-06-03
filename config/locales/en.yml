@@ -35,7 +35,7 @@ en:
     profile_example: 'Ex: just the "geoff" part in "http://lineup.bonnaroo.com/geoff/"'
     by_time: "By Time"
     by_popularity: "By Popularity"
-    filter_users: "Filter User"
+    filter_users: "Filter Users"
   issue:
     instructions: "Got a bug? Feature request?"
     title: "New Feedback"
