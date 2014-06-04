@@ -3,14 +3,18 @@ class DashboardController < ApplicationController
     @schedule = Schedule.new
     @show_groups = day_shows.values
     @days = day_shows.keys
-    @users = User.by_name
-    @popularity = Show.by_popularity.limit(15).decorate
+    @users = current_user.followed_users
+    @popularity = followed_shows.by_popularity.limit(15).decorate
   end
 
   private
 
+  def followed_shows
+    current_user.followed_shows
+  end
+
   def day_shows
-    @day_shows ||= Show.includes(:schedules)
+    @day_shows ||= followed_shows
       .by_starting_at
       .decorate
       .group_by(&:day)
