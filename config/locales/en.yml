@@ -45,6 +45,8 @@ en:
     brand: "'Roo Pals"
     bonnaroo: "Bonnaroo 2014."
     me: "Me"
+  relationship:
+    self_error: "You cannot follow yourself"
   session:
     header: "Greetings, 'Roovians!"
     log_out: "Log Out"
