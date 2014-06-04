@@ -26,7 +26,7 @@
         = render "shows/show", show: show, show_day: true unless show.schedules.count.zero?
     .tab-pane#my-pals
       - @users.each do |user|
-        - unless user.schedule.not_uploaded? || user == current_user
+        - unless user.schedule.not_uploaded?
           p
             input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"
               =< user.first_name
