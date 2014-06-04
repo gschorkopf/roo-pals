@@ -18,6 +18,14 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:auth_token) }
 
+  def followed_schedules
+    Schedule.where(user_id: followed_users.pluck(:id) << id)
+  end
+
+  def followed_shows
+    Show.includes(:schedules).where(schedules: {id: followed_schedules.pluck(:id)})
+  end
+
   def schedule
     schedules.first || NullSchedule.new
     # TODO: This will be refactored once we do multiple festivals.
