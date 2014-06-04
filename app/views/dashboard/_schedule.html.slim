@@ -8,7 +8,7 @@
     li
       = link_to t('dashboard.by_popularity'), "#by-popularity", data: { toggle: 'tab' }
     li
-      = link_to t('dashboard.filter_users'), "#filter-users", data: { toggle: 'tab' }
+      = link_to t('dashboard.my_pals'), "#my-pals", data: { toggle: 'tab' }
   br
   .tab-content
     .tab-pane#by-time.active
@@ -24,7 +24,7 @@
     .tab-pane#by-popularity
       - @popularity.each do |show|
         = render "shows/show", show: show, show_day: true unless show.schedules_count.zero?
-    .tab-pane#filter-users
+    .tab-pane#my-pals
       - @users.each do |user|
         - unless user.schedule.not_uploaded? || user == current_user
           p
