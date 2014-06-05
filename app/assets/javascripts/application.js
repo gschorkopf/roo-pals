@@ -16,4 +16,5 @@
 //= require schedule
 //= require underscore
 //= require twitter/typeahead
+//= require followers-search
 //= require_tree .
