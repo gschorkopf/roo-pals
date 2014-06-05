@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
     @shows_by_popularity = followed_shows.by_popularity.limit(15).decorate
 
     @followed_users = current_user.followed_users.by_name.decorate
+    @followable_users = current_user.followable_users.by_name.decorate
   end
 
   private

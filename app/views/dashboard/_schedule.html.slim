@@ -25,6 +25,13 @@
       - @shows_by_popularity.each do |show|
         = render "shows/show", show: show, show_day: true unless show.schedules.count.zero?
     .tab-pane#my-pals
+      h3 = t('relationship.header')
+      = simple_form_for Relationship.new, url: relationships_path, method: :post do |f|
+        .input-group#follow-autocomplete data-autocomplete=@followable_users.map(&:full_name)
+          = f.input :follower_id, as: :string, label: false, input_html: { class: "form-control followers typeahead" }
+          span.input-group-btn
+            = f.submit t('relationship.submit'), class: "btn btn-primary", id: "relationship-submit"
+      h3 = t('relationship.filter')
       - @followed_users.each do |user|
         - unless user.schedule.not_uploaded?
           p

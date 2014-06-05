@@ -47,6 +47,9 @@ en:
     me: "Me"
   relationship:
     self_error: "You cannot follow yourself"
+    submit: "Follow"
+    header: "Follow Pals"
+    filter: "Filter Pals"
   session:
     header: "Greetings, 'Roovians!"
     log_out: "Log Out"
