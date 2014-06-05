@@ -34,8 +34,14 @@
           span.input-group-btn
             = f.submit t('relationship.submit'), class: "btn btn-primary", id: "relationship-submit"
       h3 = t('relationship.filter')
-      - @followed_users.each do |user|
-        - unless user.schedule.not_uploaded?
-          p
-            input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"
-              =< user.first_name
+      table.table.table-striped
+        - @followed_users.each do |user|
+          - unless user.schedule.not_uploaded?
+            tr
+              td
+                input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"
+                  =< user.first_name
+              td
+                = link_to relationship_path(user), method: :delete, class: 'btn btn-danger btn-block' do
+                  span.glyphicon.glyphicon-minus
+                    =< "Remove"
