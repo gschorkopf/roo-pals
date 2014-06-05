@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     Show.includes(:schedules).where(schedules: {id: followed_schedules.pluck(:id)})
   end
 
+  def followable_users
+    User.where.not(id: followed_users.pluck(:id) << id)
+  end
+
   def schedule
     schedules.first || NullSchedule.new
     # TODO: This will be refactored once we do multiple festivals.
