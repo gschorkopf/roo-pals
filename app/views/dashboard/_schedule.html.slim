@@ -21,9 +21,11 @@
           .tab-pane id=@days[i] class=navigator_class(i)
             - show_group.each do |show|
               = render "shows/show", show: show, show_day: false unless show.schedules.count.zero?
+
     .tab-pane#by-popularity
       - @shows_by_popularity.each do |show|
         = render "shows/show", show: show, show_day: true unless show.schedules.count.zero?
+
     .tab-pane#my-pals
       h3 = t('relationship.header')
       = simple_form_for Relationship.new, url: relationships_path, method: :post do |f|
