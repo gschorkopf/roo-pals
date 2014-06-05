@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   before_create { generate_token(:auth_token) }
 
   def followed_schedules
-    Schedule.where(user_id: followed_users.pluck(:id) << id)
+    Schedule.where(user_id: followed_users_and_self_ids)
   end
 
   def followed_shows
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def followable_users
-    User.where.not(id: followed_users.pluck(:id) << id)
+    User.where.not(id: followed_users_and_self_ids)
   end
 
   def schedule
@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def followed_users_and_self_ids
+    followed_users.pluck(:id) << id
+  end
 
   def generate_token(column)
     begin
