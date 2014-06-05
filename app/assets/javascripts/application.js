@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require schedule
 //= require underscore
+//= require twitter/typeahead
 //= require_tree .

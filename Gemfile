@@ -19,6 +19,7 @@ gem 'bootstrap'
 gem 'draper', '~> 1.3'
 gem 'underscore-rails'
 gem 'github_api'
+gem 'twitter-typeahead-rails'
 
 # View
 gem 'slim'
