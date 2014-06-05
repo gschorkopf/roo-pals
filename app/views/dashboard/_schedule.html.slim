@@ -22,10 +22,10 @@
             - show_group.each do |show|
               = render "shows/show", show: show, show_day: false unless show.schedules.count.zero?
     .tab-pane#by-popularity
-      - @popularity.each do |show|
+      - @shows_by_popularity.each do |show|
         = render "shows/show", show: show, show_day: true unless show.schedules.count.zero?
     .tab-pane#my-pals
-      - @users.each do |user|
+      - @followed_users.each do |user|
         - unless user.schedule.not_uploaded?
           p
             input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"

@@ -1,10 +1,12 @@
 class DashboardController < ApplicationController
   def show
     @schedule = Schedule.new
+
     @show_groups = day_shows.values
     @days = day_shows.keys
-    @users = current_user.followed_users
-    @popularity = followed_shows.by_popularity.limit(15).decorate
+    @shows_by_popularity = followed_shows.by_popularity.limit(15).decorate
+
+    @followed_users = current_user.followed_users.by_name.decorate
   end
 
   private
