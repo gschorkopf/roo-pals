@@ -48,8 +48,8 @@ en:
   relationship:
     self_error: "You cannot follow yourself"
     submit: "Follow"
-    header: "Follow Pals"
-    filter: "Filter Pals"
+    header: "Find Pals"
+    follows: "Pals I Follow"
   session:
     header: "Greetings, 'Roovians!"
     log_out: "Log Out"

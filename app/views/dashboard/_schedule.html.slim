@@ -38,15 +38,20 @@
           = f.input :follower_id, as: :string, label: false, input_html: { class: "form-control followers typeahead" }
           span.input-group-btn
             = f.submit t('relationship.submit'), class: "btn btn-primary", id: "relationship-submit"
-      h3 = t('relationship.filter')
+      h3 = t('relationship.follows')
       table.table.table-striped
+        tr
+          th Name
+          th Schedule Uploaded?
+          th
         - @followed_users.each do |user|
-          - unless user.schedule.not_uploaded?
             tr
               td
-                input.togglers checked='true' type="checkbox" data-target="li.schedule-#{user.schedule.id}"
-                  =< user.first_name
+                = user.full_name
               td
-                = link_to relationship_path(user), method: :delete, class: 'btn btn-danger btn-block' do
+                - unless user.schedule.not_uploaded?
+                  span.glyphicon.glyphicon-ok
+              td
+                = link_to relationship_path(user), method: :delete, class: 'btn btn-danger' do
                   span.glyphicon.glyphicon-minus
-                    =< "Remove"
+                    =< "Unfollow"
