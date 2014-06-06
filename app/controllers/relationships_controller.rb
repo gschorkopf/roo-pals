@@ -11,10 +11,15 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id]).decorate
-    relationship = Relationship.find_by(followed_id: user.id, follower_id: current_user.id)
-    relationship.destroy
-    flash[:notice] = "You unfollowed #{user.full_name}"
+    user = User.find(params[:id])
+
+    if user
+      user = user.decorate
+      relationship = Relationship.find_by(followed_id: user.id, follower_id: current_user.id)
+      relationship.destroy
+      flash[:notice] = "You unfollowed #{user.full_name}"
+    end
+
     redirect_to root_path
   end
 
