@@ -2,6 +2,11 @@
   span.glyphicon.glyphicon-circle-arrow-up
 
 .container#app-container
+  #flash-messages
+    - flash.each do |key, value|
+      div class=flash_class(key.to_sym)
+        = value
+
   ul.nav.nav-tabs.nav-justified
     li.active
       = link_to t('dashboard.by_time'), "#by-time", data: { toggle: 'tab' }
