@@ -5,8 +5,11 @@ class RelationshipsController < ApplicationController
 
     if user.present?
       Relationship.create(followed_id: user.id, follower_id: current_user.id)
+      flash[:notice] = "You followed #{user.decorate.full_name}"
+    else
+      flash[:error] = "Unable to find pal #{relationship_params[:follower_id]}"
     end
-    flash[:notice] = "You followed #{user.decorate.full_name}"
+
     redirect_to root_path
   end
 
