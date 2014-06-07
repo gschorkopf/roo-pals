@@ -21,6 +21,10 @@
         - @days.each_with_index do |day, i|
           = schedule_navigator(day, i)
 
+      ul.nav.nav-pills
+        - @stages.each_with_index do |stage, i|
+          = stage_navigator(stage, i)
+
       .tab-content
         - @show_groups.each_with_index do |show_group, i|
           .tab-pane id=@days[i] class=navigator_class(i)

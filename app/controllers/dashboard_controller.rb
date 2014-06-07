@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
 
     @show_groups = day_shows.values
     @days = day_shows.keys
+    @stages = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent"]
     @shows_by_popularity = followed_shows.by_popularity.limit(15).decorate
 
     @followed_users = current_user.followed_users.by_name.decorate
