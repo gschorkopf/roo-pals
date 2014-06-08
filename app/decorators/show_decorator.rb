@@ -14,6 +14,12 @@ class ShowDecorator < Draper::Decorator
     "#{day}: #{time_frame}"
   end
 
+  def show_classes(always_show: false)
+    hide_class = 'hideable' unless always_show
+    location_class = h.camelcased(location)
+    "#{hide_class} #{location_class}"
+  end
+
   private
 
   def pretty_time(time)
