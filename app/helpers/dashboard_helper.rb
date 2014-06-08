@@ -1,10 +1,10 @@
 module DashboardHelper
-  def schedule_navigator(day, i)
-    content_tag(:li, schedule_link(day), class: navigator_class(i))
+  def day_navigator(day, i)
+    content_tag(:li, day_link(day), class: navigator_class(i))
   end
 
-  def stage_navigator(stage, i)
-    content_tag(:li, stage_link(stage), class: "#{navigator_class(i)} togglers")
+  def stage_navigator(stage)
+    content_tag(:li, stage_link(stage), class: "togglers")
   end
 
   def navigator_class(i)
@@ -22,8 +22,8 @@ module DashboardHelper
 
   private
 
-  def schedule_link(day)
-    link_to t("days.#{day.downcase}"), "##{day}", data: { toggle: 'pill' }
+  def day_link(day)
+    link_to t("days.#{underscored(day)}"), "##{day}", data: { toggle: 'pill' }
   end
 
   def stage_link(stage)
