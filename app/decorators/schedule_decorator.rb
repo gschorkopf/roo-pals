@@ -8,8 +8,4 @@ class ScheduleDecorator < Draper::Decorator
   def user_name
     h.current_user == user ? h.t('misc.me') : user.first_name
   end
-
-  def schedule_class
-    "schedule-#{id}"
-  end
 end

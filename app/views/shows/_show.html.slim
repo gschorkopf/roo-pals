@@ -10,4 +10,4 @@
     span.badge.pull-right = show.schedules.count
     ul.list-unstyled
       - show.schedules.each do |schedule|
-        li class=schedule.schedule_class = schedule.user_name
+        li= schedule.user_name
