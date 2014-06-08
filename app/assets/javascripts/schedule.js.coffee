@@ -2,15 +2,15 @@ schedule = ->
   $buttons = $('.togglers')
 
   $buttons.on 'click', ->
-    target = $(this).data('target')
-    $names = $(target)
-    $names.toggleClass('hidden')
-    _.each $names.parent(), (list) ->
-      $list = $(list)
-      if $list.children('li').not('.hidden').size() == 0
-        $list.parents('.panel').addClass('hidden')
-      else
-        $list.parents('.panel').removeClass('hidden')
+    target = $(this).find('a').data('stage')
+
+    if target == '.all'
+      $('.show').removeClass('hidden')
+    else
+      $toShow = $(target)
+      $toHide = $('.show.hideable').not(target)
+      $toShow.removeClass('hidden')
+      $toHide.addClass('hidden')
 
   $add = $('.add-loading')
 
