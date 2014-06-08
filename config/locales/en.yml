@@ -63,4 +63,11 @@ en:
     profile_name: "Profile Name"
     resync: "Resync Schedule"
     error: "The profile name entered was not found. Are you sure it is correct?"
+  stages:
+    all: "All"
+    what_stage: "What Stage"
+    which_stage: "Which Stage"
+    this_tent: "This Tent"
+    that_tent: "That Tent"
+    the_other_tent: "The Other Tent"
 

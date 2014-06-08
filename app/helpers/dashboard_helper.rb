@@ -27,6 +27,6 @@ module DashboardHelper
   end
 
   def stage_link(stage)
-    link_to t("stages.#{stage.downcase}"), "#", data: { toggle: 'pill', stage: stage }
+    link_to t("stages.#{underscored(stage)}"), "#", data: { toggle: 'pill', stage: ".#{camelcased(stage)}" }
   end
 end
