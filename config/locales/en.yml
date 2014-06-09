@@ -50,6 +50,9 @@ en:
     submit: "Follow"
     header: "Find Pals"
     follows: "Pals I Follow"
+    name: "Name"
+    uploaded: "Schedule Uploaded?"
+    unfollow: "Unfollow"
   session:
     header: "Greetings, 'Roovians!"
     log_out: "Log Out"

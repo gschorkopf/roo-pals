@@ -47,8 +47,8 @@
       h3 = t('relationship.follows')
       table.table.table-striped
         tr
-          th Name
-          th Schedule Uploaded?
+          th = t('relationship.name')
+          th = t('relationship.uploaded')
           th
         - @followed_users.each do |user|
             tr
@@ -60,4 +60,4 @@
               td
                 = link_to relationship_path(user), method: :delete, class: 'btn btn-danger' do
                   span.glyphicon.glyphicon-minus
-                    =< "Unfollow"
+                    =< t('relationship.unfollow')
