@@ -1,0 +1,24 @@
+h3 = t('relationship.header')
+= simple_form_for Relationship.new, url: relationships_path, method: :post do |f|
+  .input-group#follow-autocomplete data-autocomplete=@followable_users.map(&:full_name)
+    = f.input :follower_id, as: :string, label: false, input_html: { class: "form-control followers typeahead" }
+    span.input-group-btn
+      = f.submit t('relationship.submit'), class: "btn btn-primary", id: "relationship-submit"
+
+h3 = t('relationship.follows')
+table.table.table-striped
+  tr
+    th = t('relationship.name')
+    th = t('relationship.uploaded')
+    th
+  - @followed_users.each do |user|
+      tr
+        td
+          = user.full_name
+        td
+          - unless user.schedule.not_uploaded?
+            span.glyphicon.glyphicon-ok
+        td
+          = link_to relationship_path(user), method: :delete, class: 'btn btn-danger' do
+            span.glyphicon.glyphicon-minus
+              =< t('relationship.unfollow')
