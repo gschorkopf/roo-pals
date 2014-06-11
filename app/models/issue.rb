@@ -1,5 +1,6 @@
 class Issue
   attr_reader :issue_factory, :title, :details, :user, :label
+  attr_accessor :success
 
   def initialize(params)
     @title = params[:title]
@@ -7,18 +8,25 @@ class Issue
     @label = assign_label(params[:label])
     @user = params[:user]
     @issue_factory = Github::Issues
+    @success = false
   end
 
+  alias_method :success?, :success
+
   def upload
-    issue_factory.new(
-      basic_auth: basic_auth,
-      repo: 'roo-pals',
-      user: 'gschorkopf'
-    ).create(
-      title: title,
-      body: body,
-      labels: label
-    )
+    begin
+      issue_factory.new(
+        basic_auth: basic_auth,
+        repo: 'roo-pals',
+        user: 'gschorkopf'
+      ).create(
+        title: title,
+        body: body,
+        labels: label
+      )
+      success = true
+    rescue
+    end
   end
 
   def self.label_options
