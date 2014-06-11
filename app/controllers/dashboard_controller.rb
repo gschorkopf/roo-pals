@@ -7,8 +7,8 @@ class DashboardController < ApplicationController
     @stages = ["What Stage", "Which Stage", "This Tent", "That Tent", "The Other Tent"]
     @shows_by_popularity = followed_shows.by_popularity.limit(15).decorate
 
-    @followed_users = current_user.followed_users.by_name.decorate.map(&:full_name)
-    @followable_users = current_user.followable_users.by_name.decorate
+    @followed_users = current_user.followed_users.by_name.decorate
+    @followable_users = current_user.followable_users.by_name.decorate.map(&:full_name)
   end
 
   private
